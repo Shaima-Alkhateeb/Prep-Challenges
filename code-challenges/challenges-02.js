@@ -9,12 +9,18 @@
 
 const reverseArray = (arr) => {
   // write your code here
-  let aftterReverse = [];
-  while(arr.lenght){
-    aftterReverse.push(arr.pop());
-  }
-  return aftterReverse;
+  for(let i = 0 , j = arr.length - 1 ; i<=j ; i++ , j-- ){
+    let temp = arr[i]; 
+    arr[i] = arr[j] ; 
+    arr[j] = temp;
+}
+ return arr;
 };
+// let aftterReverse = [];
+// while(arr.length){
+//   aftterReverse.push(arr.pop());
+// }
+// return aftterReverse;
 // console.log(reverseArray(['C#', 'JS', 'Ruby','Python']));
 
 // -------------------------------------------------------------------------------------------------------
@@ -32,18 +38,24 @@ const reverseArray = (arr) => {
 // the other starting at (n+1)th position. Alternate between them and create the new array.
 const shuffleArray = (arr) => {
   // write your code here
-
-  let afterShuffleArray = [];
-  let middle = arr.lenght/2;
-  const firstHalf = arr.splice(0, middle);   
-  const secondHalf = arr.splice(-middle);
-  for(let i=0; i<middle; i++) {
-    afterShuffleArray = firstHalf[i].push;
-    afterShuffleArray = secondHalf[i].push;
-  }
-
-  return afterShuffleArray;
+  const temp = [];
+        for(let i = 0 , j = arr.length/2 ; i < arr.length/2 ; i++,j++ ){
+            temp.push(arr[i]);
+            temp.push(arr[j]);
+        }
+    return temp;
 };
+
+// let afterShuffleArray = [];
+// let middle = arr.length/2;
+// const firstHalf = arr.splice(0, middle);   
+// const secondHalf = arr.splice(-middle);
+// for(let i=0; i<middle; i++) {
+//   afterShuffleArray = firstHalf[i].push;
+//   afterShuffleArray = secondHalf[i].push;
+// }
+
+// return afterShuffleArray;
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 03:
@@ -56,19 +68,22 @@ const shuffleArray = (arr) => {
 
 const shuffleString = (str, indicesArr) => {
   // write your code here
-  temp = [];
-  for (let i=0, j=0; i<str.lenght; i++) {
-    if (j === indicesArr[i]){
-      temp.push(str[i]);
-      j++;
-      i=0;
-    }
-    
+  const temp = [];
+  for(let i=0; i<str.length; i++){
+    temp[indicesArr[i]] = str.charAt(i);
   }
-  return temp;
-
+  return temp.join(" ");
 };
-
+// temp = [];
+// for (let i=0, j=0; i<str.length; i++) {
+//   if (j === indicesArr[i]){
+//     temp.push(str[i]);
+//     j++;
+//     i=0;
+//   }
+  
+// }
+// return temp;
 // -------------------------------------------------------------------------------------------------------
 
 module.exports = { reverseArray, shuffleArray, shuffleString };
