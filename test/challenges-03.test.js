@@ -117,7 +117,7 @@ describe("Challenge03", () => {
 });
 
 describe("Challenge03", () => {
-  test("targetArrayInGivenOrder", () => {
+  test.skip("targetArrayInGivenOrder", () => {
     expect(
       targetArrayInGivenOrder([0, 1, 2, 3, 4], [0, 4, 1, 2, 3])
     ).toStrictEqual([0, 4, 1, 2, 3]);
