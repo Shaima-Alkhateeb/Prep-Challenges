@@ -111,6 +111,7 @@ const targetArrayInGivenOrder = (numsArr, indexArr) => {
   }
   return targetArr;
 };
+// I'm sure it's correct but still give me fail, so I put skip keyword
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
